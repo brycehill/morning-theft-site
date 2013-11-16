@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container.lrg-mast
+    h1 Morning Theft
+    p
+      | Sign up for our mailing list and gain access to exclusive music and news first.
+      form.form-horizontal.sign-up-form(role='form' method='post' action='/list')
+        .form-group
+          input(type='email' placeholder='Email' name='email' required value='bryceahill@gmail.com')#email.input-lg.form-control
+        .form-group
+          input(type='name' placeholder='Name' name='name' value='bryce')#name.input-lg.form-control
+        button(type='submit').submit-btn.btn.btn-lg.btn-default Sign up
