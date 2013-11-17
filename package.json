@@ -2,24 +2,29 @@
   "name": "MorningTheft",
   "version": "0.0.0",
   "description": "The cyber home of the band Morning Theft",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "bower": "~1.2.7",
     "mailchimp-api": "~2.0.4",
     "express": "~3.4.4",
     "jade": "~0.35.0",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0"
+    "colors": "~0.6.2"
   },
   "devDependencies": {
     "nodemon": "~0.7.10",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-less": "~0.8.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Bryce Hill",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/brycehill/morning-theft-site.git"
+  },
   "license": "BSD-2-Clause"
 }
