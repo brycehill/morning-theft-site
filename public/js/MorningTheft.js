@@ -8,6 +8,8 @@ MT.Events = (function() {
     var form = $(this),
         loader = $('<img>').attr('src', 'images/loader.gif');
 
+    if (!validateForm(form)) return false;
+
     msg.show().html(loader);
 
     $.ajax({
@@ -31,40 +33,50 @@ MT.Events = (function() {
 
   function signupComplete(data) {
     msg.show()
+       .removeClass('error-message')
        .text('Thanks! Keep an eye out for your confirmation email to finalize your subscription.');
   }
 
-  function validateForm() {
-    var form = $(this);
-        email = $('input[name=email]').val(),
-        name = $('input[name=name]');
+  function validateForm(form) {
+    if (validateEmail() && validateName()) {
+      return true;
+    }
 
-    // if (!email)
+    return false;
   }
 
   function validateEmail() {
-    var email = $(this).val(),
+    var email = $('input[name=email]').val(),
         emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
         text = '';
 
-    if (!emailRegex.test(email)) text = 'Make sure your email address is valid.';
+    if (!emailRegex.test(email)) {
+      text = 'Make sure your email address is valid.';
+      msg.show().addClass('error-message').text(text);
+      return false
+    }
 
-    msg.show().text(text);
+    msg.hide();
+    return true;
   }
 
   function validateName() {
-    var name = $(this).val(),
-        nameRegex = /[a-zA-Z\s]+/;
+    var name = $('input[name=name]').val(),
+        nameRegex = /[a-zA-Z\s]+/,
         text = '';
 
-    if (!nameRegex.test(name)) text = 'Please provide a valid name';
+    if (!nameRegex.test(name)) {
+      text = 'Please provide a valid name';
+      msg.show().addClass('error-message').text(text);
+      return false
+    }
 
-    msg.show().text(text);
+    msg.hide();
+    return true;
   }
 
   return {
     submitForm: submitForm,
-    validateForm: validateForm,
     validateEmail: validateEmail,
     validateName: validateName
   };
@@ -80,7 +92,6 @@ MT = (function() {
     var form = $('form');
 
     form.on('submit', Events.submitForm);
-    form.on('blur', Events.validateForm);
     $('input[name=email]').on('blur', Events.validateEmail);
     $('input[name=name]').on('blur', Events.validateName);
   }
