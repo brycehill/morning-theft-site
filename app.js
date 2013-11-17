@@ -18,37 +18,15 @@ app.configure(function() {
 
   app.use(app.router);
 
-  app.use(errors.logErrors);
-  app.use(errors.clientError);
+  app.use(errors.logError);
+  app.use(errors.ajaxError);
   app.use(errors.errorHandler);
 });
 
 app.get('/mailinglist', routes.mailinglist);
 app.get('/', routes.index);
 app.post('/list', list.post);
-
-
-// function handleError(err, req, res, next) {
-//   console.error(err.message);
-//   console.error(err.stack);
-//   res.status(500);
-//   res.render('error', { error: err });
-// }
-
-// // Errors - need 404 too
-// //  Create log Error
-// //          clientError
-// //           handleError
-// app.use(function(err, req, res, next) {
-//   console.error(err.stack);
-//   // Change this to styled page.
-//   res.send(500, 'Something broke!');
-// });
-
-
-
-
-
+app.get('/*', routes.handleNotFound);
 
 app.listen(port);
-console.log('Express listening on port %d', port)
+console.log('Express listening on port %d', port);
