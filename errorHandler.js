@@ -21,7 +21,7 @@ var errors = {
         res.render('404');
       }
 
-      res.render('error', { error: err });
+      res.render('500', { error: err });
     }
 
 };

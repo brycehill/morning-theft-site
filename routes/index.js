@@ -1,3 +1,6 @@
+var NotFound = require('../NotFound.js');
+
+
 exports.index = function(req, res){
   res.redirect('mailinglist');
 };
@@ -8,3 +11,7 @@ exports.mailinglist = function(req, res) {
   };
   res.render('mailinglist.jade', locals);
 };
+
+exports.handleNotFound = function(req, res, next){
+    next(new NotFound());
+}
