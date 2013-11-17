@@ -15,11 +15,11 @@ body {
   font-weight: 200;
   width: 60%;
 }
-.sign-up-form {
-  width: 70%;
-}
 .form-horizontal .form-group {
   margin-left: 0px;
+}
+.form-control {
+  width: 70%;
 }
 .form-control:focus {
   border-color: #666;
@@ -45,6 +45,15 @@ body {
 }
 .form-group label {
   font-weight: 400;
+}
+.message-pane {
+  display: none;
+  height: 100%;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 200;
+  padding: 15px;
+  white-space: nowrap;
 }
 /**
  * Media Queries
