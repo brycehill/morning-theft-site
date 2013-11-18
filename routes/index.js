@@ -2,7 +2,11 @@ var NotFound = require('../NotFound.js');
 
 
 exports.index = function(req, res){
-  res.redirect('mailinglist');
+  var locals = {
+    title: 'Morning Theft :: Home'
+  };
+
+  res.render('home');
 };
 
 exports.mailinglist = function(req, res) {
