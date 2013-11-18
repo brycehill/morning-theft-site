@@ -2,7 +2,8 @@ extends layout
 
 block content
   .container.lrg-mast
-    h1 Morning Theft
+    h1
+      a(href='/') Morning Theft
     p
       | Sign up for our mailing list and gain access to exclusive music and news first.
       form.form-horizontal.sign-up-form(role='form' method='post' action='/list')
