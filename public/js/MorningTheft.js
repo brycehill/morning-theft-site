@@ -56,7 +56,7 @@ MT.Events = (function() {
       return false
     }
 
-    msg.hide();
+    msg.text(text);
     return true;
   }
 
@@ -71,7 +71,7 @@ MT.Events = (function() {
       return false
     }
 
-    msg.hide();
+    msg.text(text);
     return true;
   }
 
@@ -99,12 +99,6 @@ MT = (function() {
   function init() {
     console.log('initing');
     bindEvents();
-  }
-
-
-
-  function initPlugins() {
-
   }
 
   return {

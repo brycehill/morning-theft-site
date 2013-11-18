@@ -56,7 +56,7 @@ MT.Events = (function() {
       return false
     }
 
-    msg.hide();
+    msg.text(text);
     return true;
   }
 
@@ -71,7 +71,7 @@ MT.Events = (function() {
       return false
     }
 
-    msg.hide();
+    msg.text(text);
     return true;
   }
 
