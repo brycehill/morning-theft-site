@@ -3,7 +3,7 @@ var express = require('express'),
     routes = require('./routes'),
     errors = require('./errorHandler'),
     app = express(),
-    port = 8000;
+    port = 8001;
 
 app.configure(function() {
   app.use(express.bodyParser());
