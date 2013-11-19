@@ -41,7 +41,8 @@ a:hover {
 }
 
 .form-horizontal .form-group {
-    margin-left: 0px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .form-control {
@@ -95,9 +96,45 @@ a:hover {
  */
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .lrg-mast h1 {
-        font-size: 52px;
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .lrg-mast h1 a {
+        font-size: 50px;
+        letter-spacing: -1px;
+    }
+
+    .lrg-mast {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .lrg-mast p {
+        font-size: 20px;
+        font-weight: 200;
+        width: 100%;
+    }
+
+    .sign-up-form {
+        width: 80%;
+        margin: auto auto;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+    .form-control {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width : 481px) and (max-width : 767px) {
+    .lrg-mast h1 a {
+        font-size: 70px;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    .lrg-mast h1 a {
         letter-spacing: -1px;
     }
 
@@ -106,20 +143,6 @@ a:hover {
         font-weight: 200;
         width: 100%;
     }
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-/*    .lrg-mast h1 {
-        font-size: 52px;
-        letter-spacing: -1px;
-    }*/
-
-/*    .lrg-mast p {
-        font-size: 20px;
-        font-weight: 200;
-        width: 100%;
-    }*/
 }
 
 /* Smartphones (portrait) ----------- */
@@ -130,41 +153,50 @@ a:hover {
     .sign-up-form {
         width: 100%;
     }
+    .lrg-mast {
+        margin-top: 50px;
+    }
 }
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
     .lrg-mast p {
 /*        font-size: 24px;
         font-weight: 200;*/
-        width: 70%;
+        // width: 70%;
     }
-    .sign-up-form {
-        width: 70%;
-    }
+    // .sign-up-form {
+    //     width: 70%;
+    // }
 }
 
-/* iPads (landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-/* Styles */
+/* iPhone 5 */
+@media (min-width:320px) and (max-width: 568px) and (orientation: portrait) {
+
 }
 
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-/* Styles */
-}
 
-/* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {
-/* Styles */
-}
+// /* iPads (landscape) ----------- */
+// @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+// /* Styles */
+// }
 
-/* Large screens ----------- */
-@media only screen and (min-width : 1824px) {
-/* Styles */
-}
+// /* iPads (portrait) ----------- */
+// @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+// /* Styles */
+// }
 
-/* iPhone 4 ----------- */
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
-}
+//  Desktops and laptops -----------
+// @media only screen and (min-width : 1224px) {
+// /* Styles */
+// }
+
+// /* Large screens ----------- */
+// @media only screen and (min-width : 1824px) {
+// /* Styles */
+// }
+
+// /* iPhone 4 ----------- */
+// @media only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {
+// /* Styles */
+// }
