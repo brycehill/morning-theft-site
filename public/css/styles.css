@@ -2,18 +2,14 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   color: #444;
 }
-.lrg-mast {
-  margin-top: 100px;
+blockquote {
+  border-left-color: #B2E47C;
 }
 a:hover {
   text-decoration: none;
 }
-.lrg-mast h1 a {
-  color: #444;
-  font-size: 85px;
-  text-transform: capitalize;
-  letter-spacing: -3px;
-  text-decoration: none;
+.lrg-mast {
+  margin-top: 100px;
 }
 .lrg-mast h1 {
   font-size: 85px;
@@ -22,7 +18,7 @@ a:hover {
   text-decoration: none;
 }
 .lrg-mast h1 a {
-  text-decoration: none;
+  color: #444;
 }
 .lrg-mast p {
   font-size: 24px;
@@ -78,13 +74,13 @@ a:hover {
  */
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  .lrg-mast h1 a {
-    font-size: 40px;
-    letter-spacing: -1px;
-  }
   .lrg-mast {
     margin-top: 20px;
     text-align: center;
+  }
+  .lrg-mast h1 a {
+    font-size: 40px;
+    letter-spacing: -1px;
   }
   .lrg-mast p {
     font-size: 20px;

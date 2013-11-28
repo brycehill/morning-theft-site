@@ -3,38 +3,35 @@ body {
     color: #444;
 }
 
-.lrg-mast {
-    margin-top: 100px;
+blockquote {
+    border-left-color: #B2E47C;
 }
 
 a:hover {
     text-decoration: none;
 }
 
-.lrg-mast h1 a{
-    color: #444;
-    font-size: 85px;
-    text-transform: capitalize;
-    letter-spacing: -3px;
-    text-decoration: none;
+.lrg-mast {
+    margin-top: 100px;
+
+    h1 {
+        font-size: 85px;
+        text-transform: capitalize;
+        letter-spacing: -3px;
+        text-decoration: none;
+
+        a {
+            color: #444;
+        }
+    }
+
+    p {
+        font-size: 24px;
+        font-weight: 200;
+        width: 90%;
+    }
 }
 
-.lrg-mast h1 {
-    font-size: 85px;
-    text-transform: capitalize;
-    letter-spacing: -3px;
-    text-decoration: none;
-}
-
-.lrg-mast h1 a {
-    text-decoration: none;
-}
-
-.lrg-mast p {
-    font-size: 24px;
-    font-weight: 200;
-    width: 90%;
-}
 
 .sign-up-form {
     // width: 70%;
@@ -91,26 +88,28 @@ a:hover {
 .error-message {
     color: #E94A4A;
 }
+
 /**
  * Media Queries
  */
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width : 320px) and (max-width : 480px) {
-    .lrg-mast h1 a {
-        font-size: 40px;
-        letter-spacing: -1px;
-    }
 
     .lrg-mast {
         margin-top: 20px;
         text-align: center;
-    }
 
-    .lrg-mast p {
-        font-size: 20px;
-        font-weight: 200;
-        width: 100%;
+        h1 a {
+            font-size: 40px;
+            letter-spacing: -1px;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 200;
+            width: 100%;
+        }
     }
 
     .sign-up-form {
