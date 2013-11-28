@@ -1,15 +1,12 @@
 extends layout
 
 block content
-  .container.lrg-mast
-    h1
-      a(href='/') Morning Theft
-    p
-      | Sign up for our mailing list and gain access to exclusive music and news first.
-      form.form-horizontal.sign-up-form(role='form' method='post' action='/list')
-        .form-group
-          input(type='text' placeholder='Email' name='email')#email.input-lg.form-control
-        .form-group
-          input(type='text' placeholder='Name' name='name')#name.input-lg.form-control
-        button(type='submit').submit-btn.btn.btn-lg.btn-default Sign up
-        span.message-pane
+  p
+    | Sign up for our mailing list and gain access to exclusive music and news first.
+  form.form-horizontal.sign-up-form(role='form' method='post' action='/list')
+    .form-group
+      input(type='text' placeholder='Email' name='email')#email.input-lg.form-control
+    .form-group
+      input(type='text' placeholder='Name' name='name')#name.input-lg.form-control
+    button(type='submit').submit-btn.btn.btn-lg.btn-default Sign up
+    span.message-pane
