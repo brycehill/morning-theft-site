@@ -97,7 +97,6 @@ MT = (function() {
   }
 
   function init() {
-    console.log('initing');
     bindEvents();
   }
 

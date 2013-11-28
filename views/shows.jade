@@ -2,7 +2,28 @@ extends layout
 
 block content
     p
-      | Upcoming Shows:
+      //- | Upcoming Shows:
 
-      ul
-        li djiwjdwodwij
+      table.table.shows
+        thead
+          tr
+            th Date
+            th City
+            th Venue
+            th
+        tbody
+          tr
+            td Dec 26
+            td Phoenix, AZ
+            td Crescent Ballroom
+            td
+              a(href='http://www.crescentphx.com/event/420965-sundressed-phoenix/')
+                | More Info
+          tr
+            td Jan 25
+            td Tempe, AZ
+            td Sail Inn
+            td
+              //- a(href='') More Info
+
+

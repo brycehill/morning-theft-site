@@ -23,7 +23,7 @@ exports.press = function(req, res) {
   var locals = {
     title: 'Morning Theft :: Press',
     description: 'Read press about Morning Theft.'
-  }
+  };
   res.render('press', locals);
 };
 
@@ -31,10 +31,10 @@ exports.shows = function(req, res) {
   var locals = {
     title: 'Morning Theft :: Shows',
     description: 'Upcoming Morning Theft shows.'
-  }
+  };
   res.render('shows', locals);
 };
 
 exports.handleNotFound = function(req, res, next){
     next(new NotFound());
-}
+};
