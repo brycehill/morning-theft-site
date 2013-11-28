@@ -18,8 +18,8 @@ module.exports = function(grunt) {
       'src/js/*.js'
     ],
     vendorFiles = [
-      'vendor/jquery/jquery.min.js'
-      // 'vendor/bootstrap/dist/css/bootstrap.min.css'
+      'vendor/jquery/jquery.min.js',
+      'vendor/bootstrap/dist/js/bootstrap.min.js'
     ];
 
   grunt.initConfig({

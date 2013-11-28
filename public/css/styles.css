@@ -5,11 +5,14 @@ body {
 blockquote {
   border-left-color: #B2E47C;
 }
+button:focus {
+  outline: none;
+}
 a:hover {
   text-decoration: none;
 }
 .lrg-mast {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 .lrg-mast h1 {
   font-size: 85px;
@@ -44,14 +47,11 @@ a:hover {
   border-color: #BEF582;
 }
 .submit-btn:hover {
-  color: #666;
   background-color: #B2E47C;
   border-color: #B2E47C;
 }
 .submit-btn:focus {
-  color: #666;
-  background-color: #BEF582;
-  border-color: #A3CF74   ;
+  border-color: #A3CF74;
   outline: none;
 }
 .form-group label {
@@ -68,6 +68,28 @@ a:hover {
 }
 .error-message {
   color: #E94A4A;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent;
+  border-bottom: 3px solid #B2E47C;
+}
+.navbar {
+  height: 53px;
+}
+.navbar-toggle {
+  border-color: #ccc;
+}
+.navbar-toggle .icon-bar {
+  background-color: #999;
+}
+.nav li a {
+  border-bottom: transparent;
+  text-transform: uppercase;
+  color: #666;
+}
+.nav .active a {
+  border-bottom: 3px solid #B2E47C;
 }
 /**
  * Media Queries
@@ -103,6 +125,9 @@ a:hover {
     width: 100%;
     white-space: normal;
     padding: 10px 0;
+  }
+  .table > thead > tr > th {
+    text-align: center;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 767px) {

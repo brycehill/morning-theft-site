@@ -23,10 +23,24 @@ html(lang='en')
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
   body
-    .container.lrg-mast
-      h1
-        a(href='/') Morning Theft
-      block content
+    - var links = { home: '/', shows: '/shows', press: '/press' }
+    .container
+      .navbar.navbar-static-top(role='navigation')
+        button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span(class='sr-only') Toggle navigation
+          span(class='icon-bar')
+          span(class='icon-bar')
+          span(class='icon-bar')
+        div.navbar-collapse.collapse
+          ul.nav.navbar-nav.pull-right
+            each link, item in links
+              li(class=[selectedLink === item ? 'active' : '', item])
+                a(href=link)=item
+
+      .lrg-mast
+        h1
+          a(href='/') Morning Theft
+        block content
   footer
   script(src='js/vendor.js')
   script(src='js/MorningTheft.min.js')

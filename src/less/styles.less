@@ -7,12 +7,16 @@ blockquote {
     border-left-color: #B2E47C;
 }
 
+button:focus {
+    outline: none;
+}
+
 a:hover {
     text-decoration: none;
 }
 
 .lrg-mast {
-    margin-top: 100px;
+    margin-top: 80px;
 
     h1 {
         font-size: 85px;
@@ -57,19 +61,16 @@ a:hover {
     color: #666;
     background-color: #BEF582;
     border-color: #BEF582;
-}
 
-.submit-btn:hover {
-    color: #666;
-    background-color: #B2E47C;
-    border-color: #B2E47C;
-}
+    &:hover {
+        background-color: #B2E47C;
+        border-color: #B2E47C;
+    }
 
-.submit-btn:focus {
-    color: #666;
-    background-color: #BEF582;
-    border-color: #A3CF74   ;
-    outline: none;
+    &:focus {
+        border-color: #A3CF74;
+        outline: none;
+    }
 }
 
 .form-group label {
@@ -87,6 +88,40 @@ a:hover {
 }
 .error-message {
     color: #E94A4A;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    background-color: transparent;
+    // transition: border-bottom .5s;
+    border-bottom: 3px solid #B2E47C;
+}
+
+.navbar {
+    height: 53px;
+}
+
+.navbar-toggle {
+    border-color: #ccc;
+
+    .icon-bar {
+        background-color: #999;
+    }
+}
+
+// .nav:firs .active a {
+//     // border-bottom: 3px solid #B2E47C;
+// }
+
+.nav li a {
+    border-bottom: transparent;
+    // transition: border-bottom .5s;
+    text-transform: uppercase;
+    color: #666;
+}
+// B1644F   96A8E8    B2E47C
+.nav .active a {
+    border-bottom: 3px solid #B2E47C;
 }
 
 /**
@@ -130,6 +165,10 @@ a:hover {
         width: 100%;
         white-space: normal;
         padding: 10px 0;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
     }
 }
 

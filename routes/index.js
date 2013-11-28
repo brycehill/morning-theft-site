@@ -4,7 +4,8 @@ var NotFound = require('../NotFound.js');
 exports.index = function(req, res){
   var locals = {
     title: 'Morning Theft :: Home',
-    description: 'Cyber home of the band Morning Theft'
+    description: 'Cyber home of the band Morning Theft',
+    selectedLink: 'home'
   };
 
   res.render('home', locals);
@@ -14,7 +15,8 @@ exports.mailinglist = function(req, res) {
   var locals = {
     title: 'Morning Theft :: Mailing List Sign-up',
     description: 'Sign up for Morning Theft\'s mailing list to be the first to gain ' +
-                 'access to exclusive music and news first.'
+                 'access to exclusive music and news first.',
+    selectedLink: 'mailinglist'
   };
   res.render('mailinglist', locals);
 };
@@ -22,7 +24,8 @@ exports.mailinglist = function(req, res) {
 exports.press = function(req, res) {
   var locals = {
     title: 'Morning Theft :: Press',
-    description: 'Read press about Morning Theft.'
+    description: 'Read press about Morning Theft.',
+    selectedLink: 'press'
   };
   res.render('press', locals);
 };
@@ -30,7 +33,8 @@ exports.press = function(req, res) {
 exports.shows = function(req, res) {
   var locals = {
     title: 'Morning Theft :: Shows',
-    description: 'Upcoming Morning Theft shows.'
+    description: 'Upcoming Morning Theft shows.',
+    selectedLink: 'shows'
   };
   res.render('shows', locals);
 };
