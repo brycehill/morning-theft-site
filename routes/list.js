@@ -1,7 +1,8 @@
 var MC = require('mailchimp-api').Mailchimp,
     config = require('../config'),
     errors = require('../errorHandler'),
-    mc = new MC(config.mailchimp.key);
+    mc = new MC(config.mailchimp.key),
+    geoip = require('geoip-lite');
 
 function validateInput(input, cb) {
   var email = input.email,
@@ -28,15 +29,34 @@ exports.post = function(req, res, next) {
   var input = {
         email: req.body.email,
         name: req.body.name
-      };
+      },
+      ip = req.headers['X-Forwarded-For'] || req.connection.remoteAddress,
+      geo = geoip.lookup(ip),
+      country = '',
+      region = '',
+      city = '';
+console.log(req.headers);
+console.log(req.connection);
+console.log(ip);
 
+  if (geo) {
+    country = geo.country;
+    region = geo.region;
+    city = geo.city;
+  }
+
+  // Get Location of user.
   validateInput(input, function(err, data) {
     if (err) next(err);
 
     mc.lists.subscribe({
         id: config.mailchimp.list.id,
         email: { email: data.email },
-        merge_vars: { FNAME: data.name }
+        merge_vars: {
+          FNAME: data.name,
+          COUNTRY: country,
+          REGION: region,
+          CITY: city }
       }, function(userData) {
         res.send(200);
       }, function(err) {
@@ -44,6 +64,7 @@ exports.post = function(req, res, next) {
         if (err.name === 'List_AlreadySubscribed') {
           next(new Error('Looks like you already signed up for our list. Thanks!'));
         } else {
+          console.log(err);
           next(new Error('Uh-oh something broke. Please try again.'));
         }
     });
