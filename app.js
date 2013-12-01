@@ -8,6 +8,7 @@ var express = require('express'),
 app.configure(function() {
   app.use(express.bodyParser());
   app.use(express.cookieParser());
+  app.enable('trust proxy');
 
   app.set('view engine', 'jade');
   app.engine('jade', require('jade').__express);
