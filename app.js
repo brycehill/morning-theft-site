@@ -26,6 +26,9 @@ app.configure(function() {
 app.get('/mailinglist', routes.mailinglist);
 app.get('/press', routes.press);
 app.get('/shows', routes.shows);
+app.get('/music', routes.music);
+app.get('/photos', routes.photos);
+app.get('/connect', routes.connect);
 app.get('/', routes.index);
 app.post('/list', list.post);
 app.get('/*', routes.handleNotFound);

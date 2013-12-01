@@ -23,20 +23,22 @@ html(lang='en')
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
   body
-    - var links = { home: '/', shows: '/shows', press: '/press' }
-    .container
-      .navbar.navbar-static-top(role='navigation')
-        button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-          span(class='sr-only') Toggle navigation
-          span(class='icon-bar')
-          span(class='icon-bar')
-          span(class='icon-bar')
+    - var links = { home: '/', shows: '/shows', music: '/music', photos: '/photos', connect: '/connect' }
+    header.navbar.navbar-static.navbar-static-top
+      .container
+        .navbar-header(role='navigation')
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span(class='sr-only') Toggle navigation
+            span(class='icon-bar')
+            span(class='icon-bar')
+            span(class='icon-bar')
         div.navbar-collapse.collapse
           ul.nav.navbar-nav.pull-right
             each link, item in links
               li(class=[selectedLink === item ? 'active' : '', item])
-                a(href=link)=item
+                a(href=link)=item.replace('_', ' ')
 
+    .container
       .lrg-mast
         h1
           a(href='/') Morning Theft

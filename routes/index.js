@@ -16,7 +16,7 @@ exports.mailinglist = function(req, res) {
     title: 'Morning Theft :: Mailing List Sign-up',
     description: 'Sign up for Morning Theft\'s mailing list to be the first to gain ' +
                  'access to exclusive music and news first.',
-    selectedLink: 'mailinglist'
+    selectedLink: 'mailing_list'
   };
   res.render('mailinglist', locals);
 };
@@ -37,6 +37,34 @@ exports.shows = function(req, res) {
     selectedLink: 'shows'
   };
   res.render('shows', locals);
+};
+
+exports.music = function(req, res) {
+  var locals = {
+    title: 'Morning Theft :: Music',
+    description: 'Listen to music by the band Morning Theft.',
+    selectedLink: 'music'
+  };
+  res.render('music', locals);
+};
+
+exports.photos = function(req, res) {
+  var locals = {
+    title: 'Morning Theft :: Photos',
+    description: 'Check out photos of the band Morning Theft.',
+    selectedLink: 'photos'
+  };
+  res.render('photos', locals);
+};
+
+exports.connect = function(req, res) {
+  var locals = {
+    title: 'Morning Theft :: Connect',
+    description: 'Connect with the band Morning Theft on social networks like Facebook, ' +
+                 'Twitter, and Instagram. Also join their mailing list.',
+    selectedLink: 'connect'
+  };
+  res.render('connect', locals);
 };
 
 exports.handleNotFound = function(req, res, next){

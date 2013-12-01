@@ -80,8 +80,20 @@ a:hover {
 .navbar-toggle {
   border-color: #ccc;
 }
+.navbar-toggle:hover {
+  background-color: #eee;
+  border-color: #eee;
+}
 .navbar-toggle .icon-bar {
   background-color: #999;
+}
+.navbar-collapse.in ul {
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+.navbar-collapse.collapse ul {
+  float: right !important!;
 }
 .nav li a {
   border-bottom: transparent;
