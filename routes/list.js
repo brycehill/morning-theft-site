@@ -30,14 +30,12 @@ exports.post = function(req, res, next) {
         email: req.body.email,
         name: req.body.name
       },
-      ip = req.headers['X-Forwarded-For'] || req.connection.remoteAddress,
+      // Express should do all the IP parsing for us.
+      ip = req.ip || req.headers['X-Forwarded-For'] || req.connection.remoteAddress,
       geo = geoip.lookup(ip),
       country = '',
       region = '',
       city = '';
-console.log(req.headers);
-console.log(req.connection);
-console.log(ip);
 
   if (geo) {
     country = geo.country;
