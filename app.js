@@ -1,5 +1,5 @@
 var express = require('express'),
-    list = require('./routes/list'),
+    list = require('./lib/list'),
     routes = require('./routes'),
     errors = require('./errorHandler'),
     app = express(),
