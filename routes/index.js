@@ -1,5 +1,7 @@
-var NotFound = require('../NotFound.js');
+var NotFound = require('../NotFound.js'),
+    Instagram = require('../lib/instagram');
 
+// Move this out of here
 
 exports.index = function(req, res){
   var locals = {
@@ -48,12 +50,22 @@ exports.music = function(req, res) {
   res.render('music', locals);
 };
 
-exports.photos = function(req, res) {
+exports.photos = function(req, res, next) {
+
+  // Get all the photos we are going to display,
+  // let the instagram module handle all the logical bits
+  Instagram.getAll(function(err, photos) {
+    if (err) next(err);
+    console.log('get All callback');
+    console.log(photos);
+  })
+
   var locals = {
     title: 'Morning Theft :: Photos',
     description: 'Check out photos of the band Morning Theft.',
     selectedLink: 'photos'
   };
+
   res.render('photos', locals);
 };
 
