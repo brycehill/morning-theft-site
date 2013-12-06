@@ -1,4 +1,10 @@
 extends layout
 
 block content
-  p Coming Soon.
+  h2 Instagram -
+  ul.photos
+    each photo in photos
+        //- url width height
+        li
+            img(src=photo.images.thumbnail.url class='img-thumbnail')
+    .clearfix

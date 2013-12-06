@@ -103,6 +103,15 @@ a:hover {
 .nav .active a {
   border-bottom: 3px solid #B2E47C;
 }
+.photos {
+  padding: 0;
+  list-style: none;
+}
+.photos li {
+  margin: 5px 10px 5px 0;
+  display: inline;
+  float: left;
+}
 /**
  * Media Queries
  */
