@@ -56,17 +56,16 @@ exports.photos = function(req, res, next) {
   // let the instagram module handle all the logical bits
   Instagram.getAll(function(err, photos) {
     if (err) next(err);
-    console.log('get All callback');
-    console.log(photos);
+
+    var locals = {
+      title: 'Morning Theft :: Photos',
+      description: 'Check out photos of the band Morning Theft.',
+      selectedLink: 'photos',
+      photos: photos
+    };
+
+    res.render('photos', locals);
   })
-
-  var locals = {
-    title: 'Morning Theft :: Photos',
-    description: 'Check out photos of the band Morning Theft.',
-    selectedLink: 'photos'
-  };
-
-  res.render('photos', locals);
 };
 
 exports.connect = function(req, res) {
