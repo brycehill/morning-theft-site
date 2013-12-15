@@ -11,8 +11,8 @@ html(lang='en')
     meta(property='og:description' content='Cyber home of the band Morning Theft')
 
     meta(name="viewport", content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='css/bootstrap.min.css')
-    link(rel='stylesheet', href='css/styles.css')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='./css/styles.css')
     script.
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-45816142-1']);
@@ -22,7 +22,8 @@ html(lang='en')
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-  body
+  //- Separate above to a header block ^
+  body(id=selectedLink)
     - var links = { home: '/', shows: '/shows', music: '/music', photos: '/photos'/*, connect: '/connect'*/ }
     header.navbar.navbar-static.navbar-static-top
       .container
@@ -33,6 +34,12 @@ html(lang='en')
             span(class='icon-bar')
             span(class='icon-bar')
         div.navbar-collapse.collapse
+          ul.social-icons.nav.navbar-nav.pull-right
+            li.twitter
+              a(href='http://twitter.com/themorningtheft')
+            li.facebook
+              a(href='http://facebook.com/themorningtheft')
+
           ul.nav.navbar-nav.pull-right
             each link, item in links
               li(class=[selectedLink === item ? 'active' : '', item])
@@ -42,7 +49,7 @@ html(lang='en')
       .lrg-mast
         h1
           a(href='/') Morning Theft
-        block content
+      block content
   footer
   script(src='js/vendor.js')
   script(src='js/MorningTheft.min.js')
