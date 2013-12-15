@@ -1,10 +1,11 @@
 var MT = MT || {};
 
-MT.Events = (function() {
+MT.Forms = (function() {
 
-  var msg = $('.message-pane');
+  var msg = $('.message-pane'),
+      $win = $(window);
 
-  function submitForm(e) {
+  function submit(e) {
     var form = $(this),
         loader = $('<img>').attr('src', 'images/loader.gif');
 
@@ -53,7 +54,7 @@ MT.Events = (function() {
     if (!emailRegex.test(email)) {
       text = 'Make sure your email address is valid.';
       msg.show().addClass('error-message').text(text);
-      return false
+      return false;
     }
 
     msg.text(text);
@@ -68,7 +69,7 @@ MT.Events = (function() {
     if (!nameRegex.test(name)) {
       text = 'Please provide a valid name';
       msg.show().addClass('error-message').text(text);
-      return false
+      return false;
     }
 
     msg.text(text);
@@ -76,7 +77,7 @@ MT.Events = (function() {
   }
 
   return {
-    submitForm: submitForm,
+    submit: submit,
     validateEmail: validateEmail,
     validateName: validateName
   };

@@ -1,10 +1,11 @@
 var MT = MT || {};
 
-MT.Events = (function() {
+MT.Forms = (function() {
 
-  var msg = $('.message-pane');
+  var msg = $('.message-pane'),
+      $win = $(window);
 
-  function submitForm(e) {
+  function submit(e) {
     var form = $(this),
         loader = $('<img>').attr('src', 'images/loader.gif');
 
@@ -53,7 +54,7 @@ MT.Events = (function() {
     if (!emailRegex.test(email)) {
       text = 'Make sure your email address is valid.';
       msg.show().addClass('error-message').text(text);
-      return false
+      return false;
     }
 
     msg.text(text);
@@ -68,7 +69,7 @@ MT.Events = (function() {
     if (!nameRegex.test(name)) {
       text = 'Please provide a valid name';
       msg.show().addClass('error-message').text(text);
-      return false
+      return false;
     }
 
     msg.text(text);
@@ -76,24 +77,63 @@ MT.Events = (function() {
   }
 
   return {
-    submitForm: submitForm,
+    submit: submit,
     validateEmail: validateEmail,
     validateName: validateName
   };
 
 }());;var MT = MT || {};
 
+MT.Photos = (function() {
+  $win = $(window);
+
+  function openInstagramWindow(e) {
+    var target = $(e.target),
+        link = target.data('link'),
+        width = 550,
+        left = ($win.width() / 2) - (width / 2),
+        top = 50,
+        opts = 'toolbar=no,menubar=no,tabbar=no,height=650,width=' + width + ',dialog=yes,' +
+               'resizable=yes,left=' + left + ',top=' + top,
+        newWin;
+
+    newWin = window.open(link, 'title', opts);
+
+    return false;
+  }
+
+  function showTab(type) {
+    $('#'+type+'-photos').show();
+  }
+
+  function toggle(e) {
+    $('.gallery').hide();
+    showTab($(e.target).data('type'));
+  }
+
+  return {
+    openInstagramWindow: openInstagramWindow,
+    toggle: toggle
+  };
+
+}());;var MT = MT || {};
 
 MT = (function() {
 
-  var Events = MT.Events;
+  var form = MT.Forms,
+      photos = MT.Photos;
 
   function bindEvents() {
-    var form = $('form');
+    $('form').on('submit', form.submit);
+    $('input[name=email]').on('blur', form.validateEmail);
+    $('input[name=name]').on('blur', form.validateName);
 
-    form.on('submit', Events.submitForm);
-    $('input[name=email]').on('blur', Events.validateEmail);
-    $('input[name=name]').on('blur', Events.validateName);
+    $('.gallery img').on('click', photos.openInstagramWindow);
+    $('#instagram-button').on('click', photos.toggle);
+    $('#live-button').on('click', photos.toggle);
+    $('body#photos').on('load', function(){
+      // console.log('photos page loaded')
+    })
   }
 
   function init() {

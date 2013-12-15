@@ -1,3 +1,7 @@
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: 'Helvetica Neue', sans-serif;
     color: #444;
@@ -7,12 +11,21 @@ blockquote {
     border-left-color: #B2E47C;
 }
 
+button:focus {
+    outline: none;
+}
+
 a:hover {
     text-decoration: none;
 }
 
+p {
+    font-size: 24px;
+    font-weight: 200;
+}
+
 .lrg-mast {
-    margin-top: 100px;
+    margin-top: 80px;
 
     h1 {
         font-size: 85px;
@@ -26,9 +39,8 @@ a:hover {
     }
 
     p {
-        font-size: 24px;
-        font-weight: 200;
         width: 90%;
+        // margin: 10px 0 0 0;
     }
 }
 
@@ -57,19 +69,16 @@ a:hover {
     color: #666;
     background-color: #BEF582;
     border-color: #BEF582;
-}
 
-.submit-btn:hover {
-    color: #666;
-    background-color: #B2E47C;
-    border-color: #B2E47C;
-}
+    &:hover {
+        background-color: #B2E47C;
+        border-color: #B2E47C;
+    }
 
-.submit-btn:focus {
-    color: #666;
-    background-color: #BEF582;
-    border-color: #A3CF74   ;
-    outline: none;
+    &:focus {
+        border-color: #A3CF74;
+        outline: none;
+    }
 }
 
 .form-group label {
@@ -87,6 +96,124 @@ a:hover {
 }
 .error-message {
     color: #E94A4A;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    background-color: transparent;
+    // transition: border-bottom .5s;
+    border-bottom: 3px solid #B2E47C;
+}
+
+.navbar {
+    height: 53px;
+}
+
+.navbar-toggle {
+    border-color: #ccc;
+
+    &:hover {
+        background-color: #eee;
+        border-color: #eee;
+    }
+
+    .icon-bar {
+        background-color: #999;
+        // height: 1px;
+    }
+}
+
+.navbar-collapse.in ul {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+
+    li {
+
+    }
+}
+
+.navbar-collapse.collapse ul {
+    float: right !important!;
+}
+
+
+.nav li a {
+    border-bottom: transparent;
+    text-transform: uppercase;
+    color: #666;
+}
+// B1644F   96A8E8    B2E47C
+.nav .active a {
+    border-bottom: 3px solid #B2E47C;
+}
+
+.social-icons {
+    padding: 15px 15px 15px 10px;
+
+    li {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+
+        a {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        a:hover {
+            border-bottom: none;
+        }
+    }
+
+    .twitter {
+        background: url('../images/twitter.png') no-repeat;
+        background-size: 20px;
+        background-position: 0 0;
+    }
+
+    .twitter:hover {
+        background-position: 0 -20px;
+    }
+
+    .facebook {
+        background: url('../images/facebook.png') no-repeat;
+        background-size: 20px;
+        background-position: 0 0;
+    }
+
+    .facebook:hover {
+        background-position: 0 -20px;
+    }
+}
+
+.gallery {
+    padding: 0;
+    list-style: none;
+
+    li {
+        margin: 5px 10px 5px 0;
+        display: inline;
+        float: left;
+    }
+
+    li img {
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    li img:hover {
+        opacity: 0.6;
+    }
+}
+
+.img-thumbnail {
+    // padding: 0;
+}
+
+#live-photos {
+    display: none;
 }
 
 /**
@@ -130,6 +257,10 @@ a:hover {
         width: 100%;
         white-space: normal;
         padding: 10px 0;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
     }
 }
 
