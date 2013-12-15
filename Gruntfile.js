@@ -8,17 +8,20 @@ module.exports = function(grunt) {
 
 
   // Tasks
-  grunt.registerTask('dev', ['concat', 'uglify:core', 'less', 'watch']);
+  grunt.registerTask('dev', ['concat', /*'uglify:core',*/ 'less', 'watch']);
   grunt.registerTask('vendor', ['uglify:vendor']);
   // grunt.registerTask('build', 'uglify:production');
 
   // The order matters!
   var
     coreFiles = [
-      'src/js/*.js'
+      'src/js/lib/form.js',
+      'src/js/lib/photos.js',
+      'src/js/mt.js'
     ],
     vendorFiles = [
       'vendor/jquery/jquery.min.js',
+      // 'vendor/history/scripts/bundled/html4+html5/jquery.history.js',
       'vendor/bootstrap/dist/js/bootstrap.min.js'
     ];
 
