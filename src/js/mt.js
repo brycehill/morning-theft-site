@@ -1,16 +1,21 @@
 var MT = MT || {};
 
-
 MT = (function() {
 
-  var Events = MT.Events;
+  var form = MT.Forms,
+      photos = MT.Photos;
 
   function bindEvents() {
-    var form = $('form');
+    $('form').on('submit', form.submit);
+    $('input[name=email]').on('blur', form.validateEmail);
+    $('input[name=name]').on('blur', form.validateName);
 
-    form.on('submit', Events.submitForm);
-    $('input[name=email]').on('blur', Events.validateEmail);
-    $('input[name=name]').on('blur', Events.validateName);
+    $('.gallery img').on('click', photos.openInstagramWindow);
+    $('#instagram-button').on('click', photos.toggle);
+    $('#live-button').on('click', photos.toggle);
+    $('body#photos').on('load', function(){
+      // console.log('photos page loaded')
+    })
   }
 
   function init() {
