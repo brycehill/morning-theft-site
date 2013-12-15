@@ -1,10 +1,22 @@
 extends layout
 
 block content
-  h2 Instagram -
-  ul.photos
+
+  div.btn-group
+      button#instagram-button.btn.btn-default(type='button', data-type='instagram') Instagram
+      button#live-button.btn.btn-default(type='button',data-type='live' disabled) Live
+      button.btn.btn-default(type='button' disabled) Promotional
+
+  ul#instagram-photos.gallery()
     each photo in photos
         //- url width height
-        li
-            img(src=photo.images.thumbnail.url class='img-thumbnail')
-    .clearfix
+        li(class='img-thumbnail')
+            img(src=photo.url, width=photo.width height=photo.height data-link=photo.link)
+  //- ul#live-photos.photos()
+    //- li 'We don't have too many live photos. If you're intereste
+  //-   li live photo
+  //-   each photo in photos
+  //-       //- url width height
+  //-       li
+  //-           //- a(href=photo.link, target='_blank')
+  //-           img(src=photo.images.thumbnail.url class='img-thumbnail',data-link=photo.link)
