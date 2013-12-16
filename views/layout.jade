@@ -1,28 +1,5 @@
-doctype 5
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    title=title
-    meta(name="description", content=description)
-    meta(property='og:title' content='Morning Theft')
-    meta(property='og:url' content='http://themorningtheft.com')
-    meta(property='og:site_name' content='Morning Theft')
-    meta(property='og:description' content='Cyber home of the band Morning Theft')
-
-    meta(name="viewport", content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='./css/bootstrap.min.css')
-    link(rel='stylesheet', href='./css/styles.css')
-    script.
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-45816142-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-  //- Separate above to a header block ^
+extends header
+block body
   body(id=selectedLink)
     - var links = { home: '/', shows: '/shows', music: '/music', photos: '/photos'/*, connect: '/connect'*/ }
     header.navbar.navbar-static.navbar-static-top
@@ -34,7 +11,7 @@ html(lang='en')
             span(class='icon-bar')
             span(class='icon-bar')
         div.navbar-collapse.collapse
-          ul.social-icons.nav.navbar-nav.pull-right
+          ul.social-icons.nav.navbar-nav.pull-right.hidden-xs
             li.twitter
               a(href='http://twitter.com/themorningtheft')
             li.facebook
