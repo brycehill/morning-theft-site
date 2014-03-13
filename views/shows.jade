@@ -9,17 +9,13 @@ block content
           th Venue
           th
       tbody
-        tr
-          td Feb 15
-          td Tempe, AZ
-          td Long Wong's (Acoustic Show)
-          td
-            //- a(href='') More Info
-        tr
-          td Mar 8
-          td Tempe, AZ
-          td Sail Inn
-          td
-            //- a(href='') More Info
-
-
+      //- Need to dynamically grab these.
+      - var shows = [{month: 'Apr', date: 25, year: '2014', city: 'Tempe', state: 'AZ', venue: 'Yucca Tap Room'}]
+      each show in shows
+        if Date.parse(show.year+','+show.month+','+show.date) > Date.now()
+          tr
+            td= show.month + ' ' + show.date
+            td= show.city + ', ' + show.state
+            td= show.venue
+            td
+              //- a(href='') More Info
